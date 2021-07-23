@@ -1,0 +1,13 @@
+FROM alpine:3.13.5
+
+ARG FILE_NAME=target/*.jar
+
+RUN apk add openjdk11
+
+ENV MONGODB_USER ${MONGODB_USER}
+ENV MONGODB_PASS ${MONGODB_PASS}
+ENV MONGODB_DATABASE ${MONGODB_DATABASE}
+
+COPY $FILE_NAME /app.jar
+
+ENTRYPOINT ["java", "-jar", "/app.jar"]

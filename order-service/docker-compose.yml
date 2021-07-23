@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+  postgre:
+    image: postgres:12
+    restart: always
+    ports:
+      - 8085:5432
+    environment:
+      POSTGRES_USER: ${POSTGRE_USER}
+      POSTGRES_PASSWORD: ${POSTGRE_PASS}
+      POSTGRES_DB: order-service
