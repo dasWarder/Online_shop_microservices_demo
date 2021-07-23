@@ -5,12 +5,6 @@ spring:
     username: ${POSTGRE_USER}
     password: ${POSTGRE_PASS}
     url: jdbc:postgresql://localhost:8085/order-service
-    driver-class-name: org.postgresql.Driver
-
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
 
 server:
   port: 0
