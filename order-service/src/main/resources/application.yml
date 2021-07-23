@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: order-service
   datasource:
     username: ${POSTGRE_USER}
     password: ${POSTGRE_PASS}
@@ -11,4 +13,8 @@ spring:
     show-sql: true
 
 server:
-  port: 8082
+  port: 0
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}

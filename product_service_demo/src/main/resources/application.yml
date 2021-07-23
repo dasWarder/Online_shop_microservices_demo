@@ -1,8 +1,14 @@
 spring:
+  application:
+    name: product-service
   data:
     mongodb:
       uri: mongodb://${MONGODB_USER}:${MONGODB_PASS}@localhost:8087/${MONGODB_DATABASE}?authSource=admin
       database: ${MONGODB_DATABASE}
 
 server:
-  port: 8081
+  port: 0
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
