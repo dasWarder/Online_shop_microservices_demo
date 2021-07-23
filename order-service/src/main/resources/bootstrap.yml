@@ -2,3 +2,15 @@ spring:
   cloud:
     config:
       uri: http://localhost:8889
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: password
+
+server:
+  port: 0
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
