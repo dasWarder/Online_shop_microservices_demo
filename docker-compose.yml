@@ -11,10 +11,6 @@ services:
       RABBITMQ_DEFAULT_USER: user
       RABBITMQ_DEFAULT_PASS: password
     hostname: localhost
-    networks:
-      default:
-        aliases:
-            - rabbitmqlocal
   mongo:
     image: mongo
     restart: always

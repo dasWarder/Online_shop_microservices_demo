@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: product-service
+          uri: lb://product-service
+          predicates[0]: Path=/api/products
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+  application:
+    name: api-gateway
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}-${random.uuid}
