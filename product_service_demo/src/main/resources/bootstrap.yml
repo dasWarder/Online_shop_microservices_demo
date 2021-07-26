@@ -1,4 +1,9 @@
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8180/auth/realms/microservices-realm
   cloud:
     config:
       uri: http://localhost:8889
